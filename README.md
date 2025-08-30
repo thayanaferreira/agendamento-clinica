@@ -46,7 +46,3 @@ Este projeto foi uma oportunidade prática para consolidar conceitos importantes
 ### Limpeza do banco antes de testes
 
 - Para evitar conflitos com chaves duplicadas ou violação de integridade referencial, adicionei `deleteAll()` para limpar as tabelas antes de inserir dados fictícios com o `DataLoader`.
-
----
-
-Esses aprendizados me deram mais domínio sobre mapeamento JPA, fluxos de persistência e organização de dados em sistemas baseados em entidades. O projeto se tornou uma base sólida para projetos mais complexos com herança, relacionamentos e persistência de dados.
