@@ -36,12 +36,13 @@ public class DataLoader implements CommandLineRunner {
         pessoa.setEmail("maria@example.com");
         pessoa.setDataNascimento(LocalDate.of(1990, 1, 1));
         //Pessoa pessoaSalva = pessoaRepository.save(pessoa);
-                // se salvar pessoa aqui, dá erro quando chegar no save(cliente), pois id pessoa já vai existir em pessoa,
-                // e o Hibernate precisa persistir o id (igual) nas duas tabelas ao mesmo tempo. Do contrário o Hibernate
-                // vai ficar reclamando que o objeto pessoa está fora do contexto de persistência atual.
-                // o erro que aparece "detached entity passed to persist: com.example.agendamentoclinicathay.model.Pessoa"
-                // detached == separado (nesse caso: fora)
-
+                /*
+                Se salvar pessoa aqui (onde está comentado), estourará erro quando chegar no "...save(cliente)", pois no banco o id pessoa já existirá em pessoa,
+                e o Hibernate precisa persistir o id (que será igual) nas duas tabelas ao mesmo tempo. Do contrário o Hibernate
+                reclamará que o objeto pessoa está fora do contexto de persistência atual.
+                O erro que aparece é: "detached entity passed to persist: com.example.agendamentoclinicathay.model.Pessoa"
+                detached == separado (nesse caso: fora, "fora do contexto atual")
+                */
         Cliente cliente = new Cliente();
         cliente.setPessoa(pessoa);
         cliente.setConvenio("Unimed");
